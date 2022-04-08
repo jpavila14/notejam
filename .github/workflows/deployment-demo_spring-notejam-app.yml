@@ -20,11 +20,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '8'
-          distribution: 'java se development kit'
-          cache: 'maven'
+          # distribution: 'oracle'
+          # cache: 'maven'
 
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn package azure-webapp:deploy
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
